@@ -1,13 +1,17 @@
 <template >
   <button
     class="nx-button"
-    :class="[`nx-button-${props.type}`, {
-      'is-plain': props.plain,
-      'is-round': props.round,
-      'is-circle': props.circle
+    :class="[`nx-button-${type}`, {
+      'is-plain': plain,
+      'is-round': round,
+      'is-circle': circle,
+      'is-disabled': disabled
     }]"
+    @click="handleClick"
+    :disabled="disabled"
   >
-    <span>
+    <i v-show="icon" :class="[icon]"></i>
+    <span v-if="slots.default">
       <slot></slot>
     </span>
   </button>
@@ -18,7 +22,7 @@ export default {
 }
 </script>
 <script setup>
-import { defineProps, } from 'vue'
+import { defineProps, useSlots } from 'vue'
 const props = defineProps({
   type: {
     type: String,
@@ -39,8 +43,26 @@ const props = defineProps({
     type: Boolean,
     default: false,
     required: false
+  },
+  icon: {
+    type: String,
+    default: '',
+    required: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+    required: false
   }
 })
+// 相当于 vue2.x 中的 $slots 
+const slots = useSlots()
+const emits = defineEmits(['click'])
+// 给nx-button 添加Emit回调,让外部无需使用@click.native 来触发点击事件
+const handleClick = (e) => {
+  emits('click', e)
+}
+
 </script>
 
 <style lang="less">
@@ -199,7 +221,7 @@ const props = defineProps({
   padding: 12px;
 }
 // icon配套样式
-.nx-button [class*="one-icon-"] + span {
+.nx-button [class*="nx-icon-"] + span {
   margin-left: 5px;
 }
 // disabled属性

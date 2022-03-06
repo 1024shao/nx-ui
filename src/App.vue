@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Nx-Button>这是内容1</Nx-Button>
+    <Nx-Button @click="fn" disabled>这是内容1</Nx-Button>
     <Nx-Button type="primary">这是内容1</Nx-Button>
     <Nx-Button type="danger">这是内容2</Nx-Button>
     <Nx-Button type="warning">这是内容3</Nx-Button>
@@ -31,11 +31,21 @@
     <Nx-Button circle plain type="success">4</Nx-Button>
     <Nx-Button circle plain type="info">5</Nx-Button>
   </div>
+  <div class="container">
+    <Nx-Button icon="nx-icon-delete" circle plain></Nx-Button>
+    <Nx-Button icon="nx-icon-delete" circle plain type="primary"></Nx-Button>
+    <Nx-Button icon="nx-icon-delete" circle plain type="danger"></Nx-Button>
+    <Nx-Button icon="nx-icon-delete" circle plain type="warning"></Nx-Button>
+    <Nx-Button icon="nx-icon-delete" circle plain type="success"></Nx-Button>
+    <Nx-Button icon="nx-icon-delete" circle plain type="info"></Nx-Button>
+  </div>
 </template>
 
 
 <script setup>
-
+const fn = (e) => {
+  console.log(e.target, 1)
+}
 </script>
 <style lang="less">
 .container {
