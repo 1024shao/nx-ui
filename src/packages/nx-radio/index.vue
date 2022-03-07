@@ -37,17 +37,21 @@ const value = computed(() => {
   return RadioGroup ? RadioGroup.modelValue : props.modelValue
 })
 
-console.log(RadioGroup, 'child')
-// RadioGroup.$emit('update:modelValue', 3)
-const emits = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue'])
 
 const model = computed({
-  get: () => props.modelValue,
+  get: () => {
+    if (RadioGroup) {
+      return RadioGroup.modelValue
+    } else {
+      return props.modelValue
+    }
+  },
   set: (newValue) => {
     if (RadioGroup) {
       RadioGroup.$emit('update:modelValue', newValue)
     } else {
-      emits('update:modelValue', newValue)
+      emit('update:modelValue', newValue)
     }
   }
 })

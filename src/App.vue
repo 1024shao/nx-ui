@@ -1,12 +1,12 @@
 <template>
   <div class="box">
-    <nx-radio-group v-model="state.gender">
-      <nx-radio label="0">男</nx-radio>
-      <nx-radio label="1">女</nx-radio>
-    </nx-radio-group>
+    <nx-checkbox v-model="state.active">是否选中</nx-checkbox>
     <br />
-    <nx-radio label="0" v-model="state.gender">男</nx-radio>
-    <nx-radio label="1" v-model="state.gender">女</nx-radio>
+    <nx-checkbox-group v-model="state.hobby">
+      <nx-checkbox label="1"></nx-checkbox>
+      <nx-checkbox label="2"></nx-checkbox>
+      <nx-checkbox label="3"></nx-checkbox>
+    </nx-checkbox-group>
   </div>
 </template>
 
@@ -18,7 +18,8 @@ const state = reactive({
   a: false,
   username: '',
   active: true,
-  gender: 0
+  gender: 0,
+  hobby: ['1', '2', '3']
 })
 
 </script>
