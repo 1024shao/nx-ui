@@ -1,0 +1,9 @@
+src/
+example/
+public/
+
+vue.config.js
+babel.config.js
+*.yaml
+.gitignore
+*.map
