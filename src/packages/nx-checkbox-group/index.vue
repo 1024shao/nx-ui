@@ -12,7 +12,7 @@ export default {
 import { defineProps, defineEmits, getCurrentInstance, provide } from "vue";
 const props = defineProps({
   modelValue: {
-    type: Array
+    type: Array,
   }
 })
 const emit = defineEmits(['update:modelValue'])

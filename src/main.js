@@ -9,6 +9,8 @@ import NxRadio from './packages/nx-radio/index.vue'
 import NxRadioGroup from './packages/nx-radio-group/index.vue'
 import NxCheckBox from './packages/nx-checkbox/index.vue'
 import NxCheckBoxGroup from './packages/nx-checkbox-group/index.vue'
+import NxForm from './packages/nx-form/index.vue'
+import NxFormItem from './packages/nx-form-item/index.vue'
 
 const app = createApp(App)
 app.component(NxButton.name, NxButton)
@@ -19,4 +21,6 @@ app.component(NxRadio.name, NxRadio)
 app.component(NxRadioGroup.name, NxRadioGroup)
 app.component(NxCheckBox.name, NxCheckBox)
 app.component(NxCheckBoxGroup.name, NxCheckBoxGroup)
+app.component(NxForm.name, NxForm)
+app.component(NxFormItem.name, NxFormItem)
 app.mount('#app')

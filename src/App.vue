@@ -1,12 +1,13 @@
 <template>
   <div class="box">
-    <nx-checkbox v-model="state.active">是否选中</nx-checkbox>
-    <br />
-    <nx-checkbox-group v-model="state.hobby">
-      <nx-checkbox label="1"></nx-checkbox>
-      <nx-checkbox label="2"></nx-checkbox>
-      <nx-checkbox label="3"></nx-checkbox>
-    </nx-checkbox-group>
+    <nx-form :model="state.model" labelWidth="80px">
+      <nx-form-item label="用户名">
+        <nx-input placeholder="请输入用户名"></nx-input>
+      </nx-form-item>
+      <nx-form-item label="选择">
+        <nx-switch v-model="state.model.active"></nx-switch>
+      </nx-form-item>
+    </nx-form>
   </div>
 </template>
 
@@ -16,10 +17,12 @@ import { reactive } from 'vue';
 const state = reactive({
   visible: false,
   a: false,
-  username: '',
-  active: true,
   gender: 0,
-  hobby: ['1', '2', '3']
+  hobby: ['1', '2', '3'],
+  model: {
+    username: '',
+    active: true,
+  }
 })
 
 </script>
