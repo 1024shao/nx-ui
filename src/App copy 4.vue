@@ -1,12 +1,10 @@
 <template>
   <div class="box">
-    <nx-radio-group v-model="state.gender">
-      <nx-radio label="0">男</nx-radio>
-      <nx-radio label="1">女</nx-radio>
-    </nx-radio-group>
-    <br />
     <nx-radio label="0" v-model="state.gender">男</nx-radio>
     <nx-radio label="1" v-model="state.gender">女</nx-radio>
+    <br />
+    <nx-radio label="0" v-model="state.gender"></nx-radio>
+    <nx-radio label="1" v-model="state.gender"></nx-radio>
   </div>
 </template>
 

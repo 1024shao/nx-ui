@@ -1,5 +1,5 @@
 <template >
-  <label class="nx-radio" :class="{ 'is-checked': label == modelValue }">
+  <label class="nx-radio" :class="{ 'is-checked': label == value }">
     <span class="nx-radio__input">
       <span class="nx-radio__inner"></span>
       <!-- 指定name属性是为了提交表单的方便 后端需要获取键值  -->
@@ -19,7 +19,7 @@ export default {
 }
 </script>
 <script setup>
-import { defineProps, computed } from 'vue'
+import { defineProps, computed, inject } from 'vue'
 const props = defineProps({
   name: {
     type: String,
@@ -31,11 +31,24 @@ const props = defineProps({
   },
   modelValue: null
 })
+const RadioGroup = inject('RadioGroup')
+// 判断是否存在radio-group
+const value = computed(() => {
+  return RadioGroup ? RadioGroup.modelValue : props.modelValue
+})
+
+console.log(RadioGroup, 'child')
+// RadioGroup.$emit('update:modelValue', 3)
 const emits = defineEmits(['update:modelValue'])
+
 const model = computed({
   get: () => props.modelValue,
   set: (newValue) => {
-    emits('update:modelValue', newValue)
+    if (RadioGroup) {
+      RadioGroup.$emit('update:modelValue', newValue)
+    } else {
+      emits('update:modelValue', newValue)
+    }
   }
 })
 </script>
