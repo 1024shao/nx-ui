@@ -65,7 +65,7 @@ const handleClick = (e) => {
 
 </script>
 
-<style lang="less">
+<style lang="less" >
 .nx-button {
   display: inline-block;
   line-height: 1;

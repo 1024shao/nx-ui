@@ -1,51 +1,27 @@
 <template>
-  <div class="container">
-    <Nx-Button @click="fn" disabled>这是内容1</Nx-Button>
-    <Nx-Button type="primary">这是内容1</Nx-Button>
-    <Nx-Button type="danger">这是内容2</Nx-Button>
-    <Nx-Button type="warning">这是内容3</Nx-Button>
-    <Nx-Button type="success">这是内容3</Nx-Button>
-    <Nx-Button type="info">这是内容3</Nx-Button>
-  </div>
-  <div class="container">
-    <Nx-Button plain>这是内容1</Nx-Button>
-    <Nx-Button plain type="primary">这是内容1</Nx-Button>
-    <Nx-Button plain type="danger">这是内容2</Nx-Button>
-    <Nx-Button plain type="warning">这是内容3</Nx-Button>
-    <Nx-Button plain type="success">这是内容3</Nx-Button>
-    <Nx-Button plain type="info" round>这是内容3</Nx-Button>
-  </div>
-  <div class="container">
-    <Nx-Button round plain>这是内容1</Nx-Button>
-    <Nx-Button round plain type="primary">这是内容1</Nx-Button>
-    <Nx-Button round plain type="danger">这是内容2</Nx-Button>
-    <Nx-Button round plain type="warning">这是内容3</Nx-Button>
-    <Nx-Button round plain type="success">这是内容3</Nx-Button>
-    <Nx-Button round plain type="info">这是内容3</Nx-Button>
-  </div>
-  <div class="container">
-    <Nx-Button circle plain>1</Nx-Button>
-    <Nx-Button circle plain type="primary">1</Nx-Button>
-    <Nx-Button circle plain type="danger">2</Nx-Button>
-    <Nx-Button circle plain type="warning">3</Nx-Button>
-    <Nx-Button circle plain type="success">4</Nx-Button>
-    <Nx-Button circle plain type="info">5</Nx-Button>
-  </div>
-  <div class="container">
-    <Nx-Button icon="nx-icon-delete" circle plain></Nx-Button>
-    <Nx-Button icon="nx-icon-delete" circle plain type="primary"></Nx-Button>
-    <Nx-Button icon="nx-icon-delete" circle plain type="danger"></Nx-Button>
-    <Nx-Button icon="nx-icon-delete" circle plain type="warning"></Nx-Button>
-    <Nx-Button icon="nx-icon-delete" circle plain type="success"></Nx-Button>
-    <Nx-Button icon="nx-icon-delete" circle plain type="info"></Nx-Button>
-  </div>
+  <nx-button @click="state.visible = true" type="primary">弹出对话款</nx-button>
+  <!-- :visible.syn 等同于 :visible = 'visible' @update:visible='fn'-->
+  <nx-dialog width="50%" top="100px" v-model:visible="state.visible">
+    <template v-slot:title>
+      <h3>我是标题</h3>
+    </template>
+    我是内容
+    <template #footer>
+      <nx-button @click="state.visible = false">取消</nx-button>
+      <nx-button type="primary" @click="state.visible = false">确定</nx-button>
+    </template>
+  </nx-dialog>
 </template>
 
 
 <script setup>
-const fn = (e) => {
-  console.log(e.target, 1)
-}
+import { reactive } from 'vue';
+const state = reactive({
+  visible: false,
+  a: false
+})
+
+
 </script>
 <style lang="less">
 .container {
