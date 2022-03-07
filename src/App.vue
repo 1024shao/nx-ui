@@ -1,6 +1,10 @@
 <template>
   <div class="box">
-    <nx-switch v-model="state.active" activeColor="#008c8c" inactiveColor="blue" name="username"></nx-switch>
+    <nx-radio label="0" v-model="state.gender">男</nx-radio>
+    <nx-radio label="1" v-model="state.gender">女</nx-radio>
+    <br />
+    <nx-radio label="0" v-model="state.gender"></nx-radio>
+    <nx-radio label="1" v-model="state.gender"></nx-radio>
   </div>
 </template>
 
@@ -11,7 +15,8 @@ const state = reactive({
   visible: false,
   a: false,
   username: '',
-  active: true
+  active: true,
+  gender: 0
 })
 
 </script>
