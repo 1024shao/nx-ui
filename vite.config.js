@@ -17,7 +17,7 @@ export default defineConfig({
     },
     lib: {
       entry: './packages/index.js',
-      name: 'nex-ui',
+      name: 'netx-ui',
     },
   },
 })
