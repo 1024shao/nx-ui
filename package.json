@@ -1,5 +1,13 @@
 {
 	"name": "netx-ui",
+	"version": "1.0.6",
+	"author": {
+		"name": "VuJson"
+	},
+	"bugs": {
+		"url": "https://github.com/1024shao/nx-ui/issues",
+		"email": "3059680677@qq.com"
+	},
 	"files": [
 		"dist"
 	],
@@ -13,19 +21,15 @@
 		}
 	},
 	"sideEffects": true,
-	"author": {
-		"name": "VuJson"
-	},
 	"private": false,
-	"version": "1.0.5",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
 		"lib": "vite build --target lib packages/index.js"
 	},
-	"dependencies": {
-		"vue": "^3.2.25"
+	"peerDependencies": {
+		"vue": "^3.2.x"
 	},
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^2.2.0",
