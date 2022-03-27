@@ -203,5 +203,6 @@ import '../node_modules/netx-ui/dist/style.css'   // 这个bug  待修复 作者
 | initial | Number                    | 初始显示第几个item，默认为0         |
 | hasDirection| Boolean                    | 是否显示左右箭头，默认为true              |
 | hasDot   | Boolean                    | 是否显示轮播图地下的小点，默认为true   |
+| dotBgColor   | String                    | 小圆点为acitve时的颜色，默认为#008c8c   |
 
 <br>
