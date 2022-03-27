@@ -191,3 +191,17 @@ import '../node_modules/netx-ui/dist/style.css'   // 这个bug  待修复 作者
 ---
 
 <br>
+
+### 轮播图(Carousel)
+
+<br>
+
+| 属性    | 值                        | 描述                               |
+| ------- | ------------------------- | -----------------------------------|
+| duration| ms                        | 轮播时间，单位毫秒，默认2000ms      |
+| autoplay| Boolean                   | 是否自动播放，默认为 true           |
+| initial | Number                    | 初始显示第几个item，默认为0         |
+| hasDirection| Boolean                    | 是否显示左右箭头，默认为true              |
+| hasDot   | Boolean                    | 是否显示轮播图地下的小点，默认为true   |
+
+<br>
