@@ -1,33 +1,34 @@
 <template>
   <div class="box">
-    <nx-form :model="state.model" labelWidth="80px">
-      <nx-form-item label="用户名">
-        <nx-input placeholder="请输入用户名"></nx-input>
-      </nx-form-item>
-      <nx-form-item label="选择">
-        <nx-switch v-model="state.model.active"></nx-switch>
-      </nx-form-item>
-    </nx-form>
+    <nx-carousel :initial="2" :duration="2000">
+      <nx-carousel-item v-for="(item, index) in state.imgList" :key="index">
+        <img :src="item.url" />
+      </nx-carousel-item>
+    </nx-carousel>
   </div>
 </template>
 
 
 <script setup>
 import { reactive } from 'vue';
+
 const state = reactive({
-  visible: false,
-  a: false,
-  gender: 0,
-  hobby: ['1', '2', '3'],
-  model: {
-    username: '',
-    active: true,
-  }
+  imgList: [
+    { url: 'example/assets/images/4.png' },
+    { url: 'example/assets/images/2.png' },
+    { url: 'example/assets/images/1.png' },
+  ]
 })
 
 </script>
 <style lang="less">
 .box {
-  width: 200px;
+  width: 520px;
+  height: 280px;
+  margin: 20px auto;
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }
 </style>

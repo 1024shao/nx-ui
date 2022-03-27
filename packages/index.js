@@ -8,6 +8,8 @@ import NxCheckBox from './nx-checkbox/index.vue'
 import NxCheckBoxGroup from './nx-checkbox-group/index.vue'
 import NxForm from './nx-form/index.vue'
 import NxFormItem from './nx-form-item/index.vue'
+import NxCarousel from './nx-carousel/index.vue'
+import NxCarouselItem from './nx-carousel-item/index.vue'
 import './fonts/iconfont.css'
 const components = [
   NxButton,
@@ -20,6 +22,8 @@ const components = [
   NxCheckBoxGroup,
   NxForm,
   NxFormItem,
+  NxCarousel,
+  NxCarouselItem
 ]
 const install = (Vue) => {
   components.forEach(item => {
